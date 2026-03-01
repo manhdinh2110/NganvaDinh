@@ -129,7 +129,7 @@
       <!-- 0. Tiêu đề website -->
       <title>Together</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
 
 
  <style>
@@ -139,13 +139,24 @@
       box-sizing: border-box;
       font-family: 'Segoe UI', sans-serif;
     }
-
+@keyframes heartbeat {
+  0%   { transform: scale(1); }
+  25%  { transform: scale(1.15); }
+  40%  { transform: scale(1); }
+  60%  { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
     body {
       display: flex;
       height: 100vh;
       background-color: #f4f6f9;
     }
-
+.heart-icon {
+  font-size: 48px;
+  color: #e53935;
+  animation: heartbeat 1.4s infinite;
+  transform-origin: center;
+}
     /* Sidebar */
     .sidebar {
       width: 260px;
@@ -217,6 +228,17 @@
 }
 
 
+
+.male-name {
+  font-family: 'Great Vibes', cursive;
+  font-size: 26px;
+
+  background: linear-gradient(135deg, #f093fb, #f5576c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  /* text-shadow: 0 2px 6px rgba(0,0,0,0.45); */
+}
   </style>
 
 
@@ -251,7 +273,7 @@
 
      <div id="wrapper">
            <!-- 1. Tiêu đề -->
-           <h1 class="logo">CÙNG NHAU <i class="fa-solid fa-heart"></i></h1>
+           <h1 class="name male-name">Đang yêu <i class="fa-solid fa-heart"></i></h1>
 
            <div id="clock-box">
                  <div id="clock">
@@ -266,17 +288,20 @@
                         <!-- 3. Ảnh của bạn nam -->
                         <img src="images/male.jpg" class="avt">
                         <!-- 4. Tên bạn nam -->
-                        <p>Bùi Mạnh Dinh</p>
+  <p class="name male-name">Bùi Mạnh Dinh</p>
                   </div>
-                  <div id="heart">
+                  <!-- <div id="heart">
                         ❤<anni>...</anni>
-                  </div>
+                  </div> -->
+                  <div id="heart">
+  <span class="heart-icon">❤</span><anni>...</anni>
+</div>
                   <div class="two">
                         <!-- 5. Ảnh của bạn nữ -->
                         <img src="images/female.jpg" class="avt">
 
                         <!-- 6. Tên của bạn nữ -->
-                        <p>Nguyễn Thị Kim Ngân</p>
+  <p class="name male-name">Nguyễn Thị Kim Ngân</p>
                   </div>
             </div>
             
