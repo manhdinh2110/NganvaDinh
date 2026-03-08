@@ -166,6 +166,35 @@ body {
   </div>
 
   <script>
+
+function firework() {
+
+  var duration = 2000;
+  var end = Date.now() + duration;
+
+  (function frame() {
+    confetti({
+      particleCount: 5,
+      angle: 60,
+      spread: 80,
+      origin: { x: 0 }
+    });
+
+    confetti({
+      particleCount: 5,
+      angle: 120,
+      spread: 80,
+      origin: { x: 1 }
+    });
+
+    if (Date.now() < end) {
+      requestAnimationFrame(frame);
+    }
+  }());
+}
+
+
+
     const correctPassword = "262127"; // đổi mật mã tại đây
     let input = "";
 
@@ -201,7 +230,12 @@ body {
 
     function checkPassword() {
       if (input === correctPassword) {
-        window.location.href = "demo.html"; // trang sau khi đăng nhập
+        firework();
+
+setTimeout(() => {
+  window.location.href = "demo.html";
+}, 2000);
+        // window.location.href = "demo.html"; // trang sau khi đăng nhập
       } else {
         document.getElementById("error").style.display = "block";
         setTimeout(clearAll, 800);
@@ -212,6 +246,6 @@ body {
       document.getElementById("error").style.display = "none";
     }
   </script>
-
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 </body>
 </html>
