@@ -239,6 +239,32 @@
 
   /* text-shadow: 0 2px 6px rgba(0,0,0,0.45); */
 }
+
+#loveMessage{
+    position: fixed;
+    top: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    background: linear-gradient(45deg,#ff6fa5,#ffb6c1);
+    color: white;
+
+    padding: 20px 40px;
+    font-size: 26px;
+    font-weight: bold;
+
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+
+    transition: top 1s ease;
+    z-index: 9999;
+}
+
+#loveMessage.show{
+    top: 40px;
+}
+
+
   </style>
 
 
@@ -246,7 +272,9 @@
 </head>
 <body>
 
-
+<div id="loveMessage">
+    Cảm ơn bé đã đến bên anh 💖
+</div>
 
 
   <div class="sidebar">
@@ -336,5 +364,56 @@
 
     }
       </script> -->
+
+<script>
+
+window.onload = function(){
+
+    // banner sổ xuống
+    // const msg = document.getElementById("loveMessage");
+    // setTimeout(()=>{
+    //     msg.classList.add("show");
+    // },500);
+
+    // pháo hoa 2 bên
+function firework(){
+
+  var duration = 3000;
+  var end = Date.now() + duration;
+
+  (function frame(){
+
+    confetti({
+      particleCount: 80,
+      spread: 120,
+      startVelocity: 40,
+      origin: {
+        x: Math.random(),
+        y: Math.random() - 0.2
+      }
+    });
+
+    if(Date.now() < end){
+      requestAnimationFrame(frame);
+    }
+
+  }());
+
+}
+
+ // firework();
+
+    // ẩn banner sau 4s
+    setTimeout(()=>{
+        msg.classList.remove("show");
+    },2000);
+
+}
+
+</script>
+
+     // <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+
 </body>
 </html>

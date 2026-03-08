@@ -10,6 +10,12 @@
       <title>Together</title>
 </head>
 <body>
+
+<div id="loveMessage">
+    Cảm ơn bé đã đến bên anh 💖
+</div>
+
+
      <div id="wrapper">
            <!-- 1. Tiêu đề -->
            <h1>CÙNG NHAU</h1>
@@ -51,7 +57,62 @@
                 <a class="back" href="demo.html">← Quay lại</a>
 
       </div> 
-      
       <script src="app.js"></script>
+
+
+<script>
+
+window.onload = function(){
+
+    // banner sổ xuống
+    const msg = document.getElementById("loveMessage");
+    setTimeout(()=>{
+        msg.classList.add("show");
+    },500);
+
+    // pháo hoa 2 bên
+    function firework(){
+
+        var duration = 2500;
+        var end = Date.now() + duration;
+
+        (function frame(){
+
+            confetti({
+                particleCount:4,
+                angle:60,
+                spread:70,
+                origin:{x:0}
+            });
+
+            confetti({
+                particleCount:4,
+                angle:120,
+                spread:70,
+                origin:{x:1}
+            });
+
+            if(Date.now() < end){
+                requestAnimationFrame(frame);
+            }
+
+        }());
+
+    }
+
+    firework();
+
+    // ẩn banner sau 4s
+    setTimeout(()=>{
+        msg.classList.remove("show");
+    },4000);
+
+}
+
+</script>
+
+      <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+
 </body>
 </html>

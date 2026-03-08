@@ -23,7 +23,29 @@ h1 {
       text-align: center;
       color: #ec407a;
 }
+#loveMessage{
+    position: fixed;
+    top: -120px;
+    left: 50%;
+    transform: translateX(-50%);
+    
+    background: linear-gradient(45deg,#ff6fa5,#ffb6c1);
+    color: white;
 
+    padding: 20px 40px;
+    font-size: 26px;
+    font-weight: bold;
+
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+
+    transition: top 1s ease;
+    z-index: 9999;
+}
+
+#loveMessage.show{
+    top: 40px;
+}
 /* #wrapper {
       display: grid;
       grid-column: 3 / 11;
